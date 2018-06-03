@@ -1,0 +1,48 @@
+.form {
+  h3 {
+    text-transform: uppercase;
+    margin: 0 0 15px;
+    font-size: 15px;
+  }
+
+  .row {
+    display: flex;
+    margin-bottom: 10px;
+
+    label {
+      min-width: 120px;
+      line-height: 30px;
+    }
+
+    label ~ * {
+      width: 100%;
+    }
+
+    label ~ button {
+      width: auto;
+    }
+  }
+
+  .select {
+    border: 1px solid rgb(170, 170, 170);
+
+    .option {
+      padding: 3px 7px;
+      margin: 0 5px 5px;
+
+      &:first-of-type {
+        margin-top: 5px;
+      }
+
+      &.selected {
+        color: white;
+        background: rgb(67, 150, 234);
+        border-radius: 4px;
+      }
+
+      &:hover:not(.selected) {
+        cursor: pointer;
+      }
+    }
+  }
+}

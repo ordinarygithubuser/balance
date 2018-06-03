@@ -1,0 +1,44 @@
+@import "vars.scss";
+@import "button.scss";
+@import "form.scss";
+
+@import "menu.scss";
+@import "view.scss";
+
+html, body, #root {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  font: 16px 'Open Sans', arial;
+  box-sizing: border-box;
+  color: $text-color;
+}
+
+.app {
+  width: 450px;
+  height: 600px;
+  border: $element-border;
+  margin: 10px;
+
+  @include menu();
+
+  .main {
+    @include flex(column);
+    height: calc(100% - 34px);
+
+    @include view();
+  }
+
+  .account {
+    width: 400px;
+  }
+
+  .accumulator {
+
+  }
+
+}

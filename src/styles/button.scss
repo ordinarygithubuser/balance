@@ -1,0 +1,32 @@
+@mixin button () {
+  border-radius: 4px;
+  padding: $element-padding;
+  border: $element-border;
+  box-shadow: $light-shadow;
+  background: $light-background;
+
+  &:hover {
+    cursor: pointer;
+    background: #efefef;
+  }
+}
+
+button, .button {
+  @include button();
+}
+
+.icon {
+  @include button();
+
+  font-size: 18px;
+  height: 28px;
+  width: 32px;
+  line-height: 22px;
+  margin-right: 8px;
+  text-align: center;
+
+  &:last-of-type {
+    margin-right: 0;
+    align-self: flex-end;
+  }
+}

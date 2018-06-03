@@ -1,0 +1,15 @@
+$element-border: 1px solid #cdcdcd;
+$element-padding: 3px 8px;
+
+$light-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+$light-background: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
+
+$text-color: rgb(71, 71, 71);
+$text-color-light: rgb(94, 94, 94);
+$text-color-selected: rgb(25, 125, 225);
+
+@mixin flex ($flow:row, $grow:1) {
+  display: flex;
+  flex-flow: $flow;
+  flex-grow: $grow;
+}

@@ -1,0 +1,38 @@
+@mixin menu {
+
+  .menu {
+    @include flex($grow: 0);
+
+    width: 100%;
+    background-image: linear-gradient(to left,#414141 0%, #4b4b4b 9px);
+    border-bottom: 1px solid #dedede;
+    padding: 5px;
+
+    .entry {
+      text-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+      color: rgb(165, 165, 165);
+      margin-right: 8px;
+
+      &.selected {
+        color:rgb(245, 245, 245);
+      }
+
+      &:hover:not(.selected) {
+        color: $text-color-selected;
+        cursor: pointer;
+      }
+    }
+
+    .account-selection {
+      padding: 3px 0;
+      margin-right: 5px;
+    }
+  }
+
+  .popup {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+@mixin view {
+
+  .view {
+    @include flex(column);
+    height: 100%;
+
+    .subview {
+      height: 100%;
+      padding: 10px;
+    }
+
+    .context {
+      @include flex($grow:0);
+
+      height: 40px;
+      width: 100%;
+      padding: 5px;
+      border-top: $element-border;
+
+      .span {
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+  }
+
+}
