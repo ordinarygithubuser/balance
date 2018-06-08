@@ -1,3 +1,8 @@
+export const APP = {
+    NAME: 'Expense',
+    VERSION: 0.2
+};
+
 export const EXPENSE = {
     TYPES:[
         'Once',

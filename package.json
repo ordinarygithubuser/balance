@@ -41,7 +41,9 @@
   },
   "dependencies": {
     "font-awesome-webpack": "0.0.5-beta.2",
+    "momentjs": "^2.0.0",
     "react": "^16.4.0",
+    "react-dates": "^16.7.0",
     "react-dom": "^16.4.0",
     "redux": "^4.0.0"
   },

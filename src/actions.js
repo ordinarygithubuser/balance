@@ -6,7 +6,7 @@ export const Account = {
     Select: Action()
 };
 
-export const Value = {
+export const Expense = {
     Create: Action(),
     Update: Action(),
     Remove: Action()
@@ -15,5 +15,6 @@ export const Value = {
 export const Flow = {
     Visit: Action(),
     Show: Action(),
-    Hide: Action()
+    Hide: Action(),
+    Export: Action()
 };

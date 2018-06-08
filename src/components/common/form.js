@@ -11,6 +11,14 @@ export default class Form extends React.Component {
         this.state = state;
     }
 
+    getTitle () {
+        return '';
+    }
+
+    getSubmitText () {
+        return '';
+    }
+
     update (field) {
         return event => this.setState({ [field]: getValue(event) })
 
