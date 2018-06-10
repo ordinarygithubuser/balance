@@ -11,7 +11,9 @@ export default class Validator {
 	}
 
 	validate (obj) {
-		const pairs = Object.keys(obj).map(prop => {
+		const pairs = Object.keys(obj).filter(prop => {
+			return this.mappings[prop];
+		}).map(prop => {
 			const rules = this.mappings[prop];
 			const value = obj[prop];
 
@@ -19,7 +21,7 @@ export default class Validator {
 		});
 
 		const result = pairs.reduce((errors, { rules, prop, value }) => {
-			errors[key] = this.getViolations(rules, prop, value);
+			errors[prop] = this.getViolations(rules, prop, value);
 			return errors;
 		}, {});
 
@@ -29,7 +31,10 @@ export default class Validator {
 	}
 
 	getViolations (rules, prop, value) {
-		return rules.map(rule => rule.getViolationMessage(prop, value))
+		return rules.map(rule => {
+			console.log('use', rule, 'on', prop, '"' + value + '"', '(' + typeof value + ')')
+			return rule.getViolationMessage(prop, value)
+		})
 	}
 
 }

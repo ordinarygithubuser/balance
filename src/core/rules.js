@@ -1,4 +1,4 @@
-import moment from 'momentjs';
+import moment from 'moment';
 
 class Rule {
 
@@ -50,7 +50,7 @@ class StringMaxLengthRule extends Rule {
 	}
 
 	createMessage(prop) {
-		return `The string ${prop} cannot be mor than ${this.maxLength} characters long.`;
+		return `The string ${prop} cannot be more than ${this.maxLength} characters long.`;
 	}
 }
 
@@ -89,7 +89,7 @@ class NumberMaxRule extends Rule {
 	}
 
 	satisfied(value) {
-		return value && value.length < this.maxLength;
+		return value != null && value.length < this.maxLength;
 	}
 
 	createMessage(prop) {
@@ -124,6 +124,10 @@ class DateRangeRule extends Rule {
 	satisfied(value) {
 		const date = moment(value);
 		return value && date.isAfter(this.to) && date.isBefore(this.from);
+	}
+
+	createMessage (prop) {
+		return `The date ${prop} has to be between ${this.from} and ${this.to}.`;
 	}
 }
 

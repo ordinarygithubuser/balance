@@ -1,11 +1,7 @@
-import Store from '../core/store';
+import State from '../core/state';
 
 import Account from './account';
-import Value from './value'
+import Expense from './expense'
 import Flow from './flow';
 
-export default Store(
-    Flow,
-    Account,
-    Value
-)
+export default State(Flow, Account, Expense)

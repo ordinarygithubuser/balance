@@ -46,7 +46,6 @@ export default class Create extends Form {
 				<input value={amount} onChange={this.update('amount')} />
 			</Row>
 			<Row label="Date" errors={errors.date}>
-				<input value={date} onChange={this.update('date')} />
 				<SingleDatePicker
 					date={date}
 					onDateChange={date => this.setState({ date })}

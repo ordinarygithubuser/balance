@@ -2,13 +2,8 @@ import React from 'react';
 
 import View from '../common/view';
 
-const Summary = () => {
-    return <div>Summary</div>;
-};
-
-const History = () => {
-    return <div>History</div>;
-};
+import Summary from './summary';
+import History from './history';
 
 export default class AccountView extends View {
     constructor (props) {

@@ -3,11 +3,11 @@ import Rules from '../core/rules';
 
 export default new Validator({
 	name: [
-		Rules.String.Min(2),
-		Rules.String.Max(40)
+		new Rules.String.Min(2),
+		new Rules.String.Max(40)
 	],
 	balance: [
-		Rules.Number.Min(-1000000),
-		Rules.Number.Max(1000000)
+		new Rules.Number.Min(-1000000),
+		new Rules.Number.Max(1000000)
 	]
 });

@@ -1,24 +1,28 @@
-import {Account, Flow} from '../actions';
+import {CURSStore} from '../core/store';
+import {Account} from '../actions';
 
-export default ({ init, next, on }) => {
+export default class AccountStore extends CURSStore {
 
-    init('account', null);
-    init('accounts', []);
+	constructor(props) {
+		super(props, ['account', 'accounts'], Account);
+	}
 
-    on(Account.Create, (state, props) => {
-        state.account = Object.assign({ history: [] }, props);
-        state.accounts.push(state.account);
-        next(state);
-    });
+	createInstance(state, props) {
+		return {
+			history: [],
+			name: props.name,
+			type: props.type,
+			desc: props.desc,
+			balance: props.balance,
+			color: props.color
+		};
+	}
 
-    on(Account.Update, (state, details) => {
+	removeInstance(state, props) {
+		return acc => acc.id !== props.id;
+	}
 
-        next(state);
-    });
-
-    on(Account.Select, (state, account) => {
-        state.account = account;
-        next(state);
-    })
-
+	updateInstance(state, props) {
+		return acc => acc.id === props.id ? Object.assign(acc, props) : acc;
+	}
 }

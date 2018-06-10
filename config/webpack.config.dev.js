@@ -9,7 +9,7 @@ const DIST_DIR = path.resolve(ROOT_DIR, 'dist');
 
 module.exports = merge(common, {
     mode: 'development',
-    devtool: 'eval',
+    devtool: 'sourcemaps',
     output: {
         path: DIST_DIR,
         filename: 'bundle.js'
@@ -39,6 +39,9 @@ module.exports = merge(common, {
                         }
                     }
                 ]
+            }, {
+                test: /\.css$/,
+		        use: 'css-loader'
             }
         ]
     },

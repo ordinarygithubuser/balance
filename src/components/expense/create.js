@@ -1,4 +1,4 @@
-import moment from 'momentjs';
+import moment from 'moment';
 import React from 'react';
 
 import ExpenseForm from './form';

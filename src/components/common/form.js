@@ -8,7 +8,7 @@ export default class Form extends React.Component {
     constructor (props, state = {}) {
         super(props);
 
-        this.state = state;
+        this.state = Object.assign({ errors: []}, state);
     }
 
     getTitle () {
@@ -17,6 +17,10 @@ export default class Form extends React.Component {
 
     getSubmitText () {
         return '';
+    }
+
+    onSubmit () {
+        console.log('Not implemented');
     }
 
     update (field) {
